@@ -1,7 +1,7 @@
 import json
 import os
 
-DATA_FILE = "data.json"
+DATA_FILE = "/app/data/data.json"
 
 DEFAULT_DATA = {
     # Bot settings

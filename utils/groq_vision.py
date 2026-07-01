@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 GROQ_API_KEY       = os.environ.get("GROQ_API_KEY", "")
 GROQ_MODEL         = "meta-llama/llama-4-scout-17b-16e-instruct"
-REFERENCE_IMG_PATH = "reference_screenshot.jpg"
+REFERENCE_IMG_PATH = "/app/data/reference_screenshot.jpg"
 TIMEOUT_SECONDS    = 20
 
 
