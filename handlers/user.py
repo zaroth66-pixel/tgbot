@@ -252,16 +252,14 @@ async def show_referral_menu(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     kb.append([InlineKeyboardButton("⬅️ " + t(lang, "main_menu"), callback_data="user_menu")])
 
     text = (
-        f"💰 *{t(lang, 'referral_menu')}*\n\n"
+        f"💰 <b>{t(lang, 'referral_menu')}</b>\n\n"
         f"{t(lang, 'balance', balance=balance)}\n"
         f"{t(lang, 'referrals_count', count=refs)}\n"
         f"🎁 Earn {reward} ETB per referral\n\n"
-        f"{t(lang, 'referral_link', link=ref_link)}\n\n"
+        f"🔗 Your referral link:\n<code>{ref_link}</code>\n\n"
         f"{t(lang, 'share_text')}"
     )
-    await q.edit_message_text(text, reply_markup=InlineKeyboardMarkup(kb), parse_mode="Markdown")
-
-
+    await q.edit_message_text(text, reply_markup=InlineKeyboardMarkup(kb), parse_mode="HTML")
 # ── My Stats ──────────────────────────────────────────────────────────────────
 async def show_my_stats(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     """NEW: user's personal stats screen."""
