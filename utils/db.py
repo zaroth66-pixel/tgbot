@@ -67,6 +67,9 @@ def load_data() -> dict:
 
 
 def save_data(data: dict):
+    folder = os.path.dirname(DATA_FILE)
+    if folder:
+        os.makedirs(folder, exist_ok=True)
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
